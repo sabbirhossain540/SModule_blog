@@ -14,6 +14,12 @@ posts = [
         'title':'Blog Post c',
         'content':'second Post Content',
         'date_posted':'jan 2019'
+    },
+    {
+        'author':'Sakib Al Jubair',
+        'title':'Morning Habit',
+        'content':'Tried Post Content',
+        'date_posted':'january 2020'
     }
 
 ]

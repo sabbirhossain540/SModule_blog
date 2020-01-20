@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -7,6 +8,8 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/main.css' %}">
     {% if title %}
       <title>Django Blog - {{ title }}</title>
     {% else %}
@@ -14,7 +17,7 @@
     {% endif %}
   </head>
   <body>
-    <header class="site-header">
+    <header>
 
       <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: #e3f2fd !important;">
         <div class="container">
@@ -22,13 +25,13 @@
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-            <a class="navbar-brand" href="#"><span style="color:red;font-size:22px;font-weight:bold;">S</span><span style="color:blue;font-size:22px;font-weight:bold;">Module</span> Blog</a>
+            <a class="navbar-brand" href="{% url 'blog-home' %}" style="font-weight:bold;"><span style="color:red;font-size:22px;">S</span><span style="color:blue;font-size:22px;">Module</span> Blog</a>
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
               <li class="nav-item active">
-                <a class="nav-link" href="#">Home</a>
+                <a class="nav-link" href="{% url 'blog-home' %}">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">About</a>
+                <a class="nav-link" href="{% url 'blog-about' %}">About</a>
               </li>
             </ul>
             <div class="navbar-nav">
@@ -39,8 +42,9 @@
         </div>
       </nav>
     </header>
-    <main class="container" role="main">
-      <div class="row">
+    <main class="container " role="main">
+      <br>
+      <div class="row " >
         <div class="col-md-8">
           {% block content %} {% endblock %}
         </div>
