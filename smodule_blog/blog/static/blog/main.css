@@ -1,7 +1,7 @@
 body{
   background: #fafafa;
   color: #333333;
-  
+
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -54,6 +54,13 @@ a.article-title:hover{
 .account-img{
   height: 125px;
   weight: 125px;
+  margin-right: 20px;
+  margin-bottom: 16px;
+}
+
+.post-img{
+  height: 75px;
+  weight: 75px;
   margin-right: 20px;
   margin-bottom: 16px;
 }
