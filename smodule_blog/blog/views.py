@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.views.generic import ListView, DetailView
 from .models import Posts
 
 # Create your views here.
@@ -31,6 +32,16 @@ def home(request):
         'posts':Posts.objects.all()
     }
     return render(request,'blog/home.html', context)
+
+class PostListView(ListView):
+    model = Posts
+    template_name = 'blog/home.html'
+    context_object_name = 'posts'
+    ordering = ['-date_posted']
+
+class PostDetailView(DetailView):
+    model = Posts
+    template_name = 'blog/post_detail.html'
 
 def about(request):
     return render(request,'blog/about.html',{'title':'About'})
